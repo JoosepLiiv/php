@@ -18,9 +18,10 @@ class ctext extends text
     //show color text
     function show()
     {
-        if($this->color === false)
-        parent::show(); // use text class show function
-    }else{
-        echo '<font color="'.$this->color.'">'.$this->str.'</font><br>';
-}
+        if ($this->color === false) {
+            parent::show(); // use text class show function
+        } else {
+            echo '<font color="' . $this->color . '">' . $this->str . '</font><br>';
+        }
+    }
 } //class end
