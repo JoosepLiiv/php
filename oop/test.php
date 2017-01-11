@@ -21,4 +21,13 @@ print_r($sentence);
 echo'</pre>';
 //show string output
 $sentence->show();
+echo '<hr>';
+//create an object
+$sentence2 = new text('Hello text by construct');
+//control object output
+echo '<pre>';
+print_r($sentence2);
+echo '</pre>';
+
+$sentence2->show();
 ?>
