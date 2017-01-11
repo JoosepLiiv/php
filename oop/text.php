@@ -11,6 +11,13 @@ class text
     //text class begin
         var $str = '';
 
+        //constructor
+        function __construct($s='')
+        {
+            $this->setText($s);
+        }
+
+    //methods
         function setText($s){
             $this->str = $s;
         }
