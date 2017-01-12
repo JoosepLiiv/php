@@ -12,9 +12,11 @@ class ctext extends text
     var $color = false;
     //methods
     //set color
-    function setColor($c){
+    function setColor($c)
+    {
         $this->color = $c;
     }//set color
+
     //show color text
     function show()
     {

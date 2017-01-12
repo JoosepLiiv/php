@@ -9,6 +9,7 @@
 
 //require a text class
 require_once('text.php');
+require_once('ctext.php');
 //create an object
 $sentence = new text();
 echo '<pre>';
@@ -30,4 +31,16 @@ print_r($sentence2);
 echo '</pre>';
 
 $sentence2->show();
+
+echo '<hr>';
+//create an object
+$sentence3 = new text('Hello color text');
+//set object color
+$sentence3->setColor('#FF0000');
+//control object output
+echo '<pre>';
+print_r($sentence3);
+echo '</pre>';
+
+$sentence3->show();
 ?>
