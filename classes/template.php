@@ -52,4 +52,11 @@ class template
     function readFile($f){
         $this->content = file_get_contents($f);
     }// readFile
+
+    //set up html elements and their values
+    // $name - template element name
+    // $val - real value for template element
+    function set($name,$val){
+        $this->vars[$name] = $val;
+    }
 }// class end
