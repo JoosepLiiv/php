@@ -59,4 +59,6 @@ class template
     function set($name,$val){
         $this->vars[$name] = $val;
     }
+    //parse template content and replace template table names by template table real values
+
 }// class end
