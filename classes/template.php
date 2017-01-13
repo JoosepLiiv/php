@@ -65,7 +65,8 @@ class template
         $str = $this->content;
         foreach ($this->vars as $name=>$val) {
              $str = str_replace('{' . $name . '}', $val, $str);
-            }
         }
-    }
-}// class end
+        // return template with real values
+        return $str;
+    } // parse
+} // class end
