@@ -25,4 +25,11 @@ print_r($tmpl);
 echo '</pre> ';
 
 echo $tmpl->parse();
+
+require_once CLASSES_DIR.'http.php';
+$http = new http();
+
+echo '<pre>';
+print_r($http);
+echo '</pre>';
 ?>
