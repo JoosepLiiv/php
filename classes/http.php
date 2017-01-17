@@ -10,7 +10,7 @@ class http
 {
     var $server = array(); // server data
     var $vars = array(); // http data
-    var $cookies = array(); //cookies data
+    var $cookie = array(); //cookies data
 
     function __construct()
     {
@@ -21,8 +21,8 @@ class http
     // initializing
     function init(){
         $this->server = $_SERVER;
-        $this->vars = $_COOKIE;
-        $this->cookies = array_merge($_GET,$_POST,$_FILES);
+        $this->cookie = $_COOKIE;
+        $this->vars = array_merge($_GET,$_POST,$_FILES);
     }
 
     function initConst(){
