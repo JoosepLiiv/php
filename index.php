@@ -25,6 +25,7 @@ print_r($tmpl);
 echo '</pre> ';
 
 echo $tmpl->parse();
+echo '<br>';
 
 require_once CLASSES_DIR.'http.php';
 require_once CLASSES_DIR.'linkobject.php';
