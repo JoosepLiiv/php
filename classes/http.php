@@ -33,4 +33,8 @@ class http
             }
         }
     }
+    //set up data for http object
+    function set($name, $val){
+        $this->vars[$name] = $val;
+    }//set
 }
