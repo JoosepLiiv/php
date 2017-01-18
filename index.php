@@ -32,4 +32,14 @@ $http = new http();
 echo '<pre>';
 print_r($http);
 echo '</pre>';
+
+
+//inkobject class testing
+//import linkobject class
+require_once CLASSES_DIR.'linkobject.php';
+$linkobject = new linkobject();
+//control the output of linkobject
+echo '<pre>';
+print_r($linkobject);
+echo '</pre>';
 ?>
