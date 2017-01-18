@@ -38,4 +38,8 @@ echo '</pre>';
 $link = ''; //empty link for data pairs
 $link = $http->getLink(array('kasutaja'=>'user','parool'=>'qwerty'));
 echo $link;
+// control menu
+// import menu file
+require_once 'menu.php';
+
 ?>
