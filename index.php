@@ -9,6 +9,8 @@
 // create and template object
 define('CLASSES_DIR', 'classes/');
 define('TMPL_DIR', 'tmpl/');
+define('STYLE_DIR','css/');
+define('ACTS_DIR', 'acts/'); // acts
 require_once CLASSES_DIR.'template.php';
 // and use it
 // create an template object,
@@ -40,6 +42,13 @@ echo '</pre>';
 $link = ''; //empty link for data pairs
 $link = $http->getLink(array('kasutaja'=>'user','parool'=>'qwerty'));
 echo $link;
+
+echo '<pre>';
+print_r($http);
+echo '</pre>';
+
+echo $http->get('act');
+
 
 
 ?>
