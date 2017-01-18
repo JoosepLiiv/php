@@ -11,6 +11,7 @@ define('CLASSES_DIR', 'classes/');
 define('TMPL_DIR', 'tmpl/');
 define('STYLE_DIR','css/');
 define('ACTS_DIR', 'acts/'); // acts
+define('DEFAULT', 'default'); // default act or location
 require_once CLASSES_DIR.'template.php';
 // and use it
 // create an template object,
