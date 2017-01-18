@@ -34,5 +34,8 @@ $http = new linkobject();
 echo '<pre>';
 print_r($http);
 echo '</pre>';
-
+// control linkobject pair creation
+$link = ''; //empty link for data pairs
+$http->addToLink($link,'kasutaja','user');
+$http->addToLink($link,'pw','qwerty');
 ?>
