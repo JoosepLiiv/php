@@ -41,5 +41,15 @@ class linkobject extends http
     // merge baseURL and link with data pairs
     function getLink($add = array()){
         $link = ''; //empty link
-    }
+        foreach ($add as $name => $val){
+            $this->addToLink($link, $name, $val)
+        }
+        // control, link is not empty, pairs are created
+        if($link != ''){
+            $link = $this->baseUrl.'?'.$link; // http://IP/path_to_script.php?name=value
+        } else {
+            $link = $this->baseUrl;
+        }
+        return $link; // return created link to base program
+    } // getLink
 }//class end
