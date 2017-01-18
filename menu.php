@@ -10,27 +10,29 @@
 // for menu and menu items
 $menu = new template('menu.menu'); // in menu directory is file menu.html - menu/menu.html;
 $item = new template('menu.item');
-// Menu item creation - begin
-// add pairs of template elements and their real values
-$item->set('name','Esimene leht');
+// menu item creation - begin
+// add pairs of item temlate element names and real values
+$item->set('name', 'Esimene leht');
 $link = $http->getLink(array('page'=>'first'));
-$item->set('link',$link);
+$item->set('link', $link);
 // control created item output
-echo '<pre>';
+/*echo '<pre>';
 print_r($item);
-echo '</pre>';
-// add menu items to menu
-$menu->set('items',$item->parse());
-
-$item->set('name','Teine leht');
-$link = $http->getLink(array('page'=>'teine'));
-$item->set('link',$link);
+echo '</pre>';*/
+// add menu item to menu
+$menu->set('items', $item->parse());
+// menu item creation - end
+// Menu item creation - begin
+// add pairs of item temlate element names and real values
+$item->set('name', 'Teine leht');
+$link = $http->getLink(array('page'=>'second'));
+$item->set('link', $link);
 // control created item output
-echo '<pre>';
+/*echo '<pre>';
 print_r($item);
-echo '</pre>';
-// add menu items to menu
-$menu->set('items',$item->parse());
+echo '</pre>';*/
+// add menu item to menu
+$menu->add('items', $item->parse()); // add another item to menu
 // Menu item creation - end
 // control created menu output
 echo '<pre>';

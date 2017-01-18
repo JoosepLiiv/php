@@ -6,6 +6,9 @@
  * Date: 17.01.2017
  * Time: 12:51
  */
+function fixHtml($val){
+    return htmlentities($val);
+}
 class http
 {
     var $server = array(); // server data
