@@ -40,4 +40,14 @@ class http
     function set($name, $val){
         $this->vars[$name] = $val;
     }//set
+    //
+    function get($name,$fix = true){
+        if(isset($this->vars[$name])){
+            if ($fix){
+                return fixHtml($this->vars[$name]);
+            }
+            return $this->vars[$name];
+        }
+        return false;
+    }
 }
