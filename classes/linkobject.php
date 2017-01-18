@@ -42,7 +42,7 @@ class linkobject extends http
     function getLink($add = array()){
         $link = ''; //empty link
         foreach ($add as $name => $val){
-            $this->addToLink($link, $name, $val)
+            $this->addToLink($link, $name, $val);
         }
         // control, link is not empty, pairs are created
         if($link != ''){
