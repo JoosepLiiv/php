@@ -3,15 +3,18 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>{title}</title>
-    <link rel="stylesheet" type="text/css" href="/~joosep.liiv/php/css/style.css" />
+    <title>{header}</title>
 </head>
-    <div id="container">
-        <div id="header">{header}</div>
-        <div id="nav_bar">{nav_bar}</div>
-        <div id="lang_bar">{lang_bar}</div>
-        <div id="menu">{menu}</div>
-        <div id="content">{content}</div>
-    </div>
+<body>
+<table width="90%" border="1">
+    <tr>
+        <td rowspan="2" width="30%">{menu}</td>
+        <td>{nav_bar}</td>
+        <td>{lang_bar}</td>
+    </tr>
+    <tr>
+        <td colspan="2">{content}</td>
+    </tr>
+</table>
 </body>
 </html>
