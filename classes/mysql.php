@@ -14,6 +14,7 @@ class mysql
     var $user = false; // database sever user
     var $pass = false; // database server password
     var $dbname = false; // database server user database
+    var $history = array();
     // class methods
     // constructor
     function __construct($h ,$u ,$p ,$dn)
@@ -31,14 +32,27 @@ class mysql
             echo 'Probleem andmebaasi ühendamisega<br>';
             exit;
         }
+    } // connect
+
+    //get query time
+    function getMicroTime(){
+        list($usec, $sec) = explode(' ', microtime());
+        echo ((float)$usec + (float)$sec);
     }
+
     // query to database
     function query($sql){
+        $begin = $this->getMicroTime();
         $res = mysqli_query($this->conn,$sql);
         if(!$res === FALSE){
         echo 'Viga päringus <b>'.$sql.'</b></br>';
         echo mysqli_error($this->conn).'<br>';
         }
+        $time = $this->getMicroTime() - $begin;
+        $this->history[] = array(
+            'sql' = $sql;
+            'time' = $time;
+        );
         return $res;
     }//query
     // query data result

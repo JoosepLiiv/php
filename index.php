@@ -42,10 +42,11 @@ require_once 'act.php';
 echo '<br><br>';
 
 $sql = 'SELECT NOW();';
-$res = $db->query($sql);
+$res = $db->getArray($sql);
 
 echo '<pre>';
 print_r($res);
 echo '</pre>';
+$db->getMicroTime();
 
 ?>
