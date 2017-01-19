@@ -22,4 +22,4 @@ require_once 'dbconf.php'; // import database configuration
 
 $http = new linkobject();
 // create database connection object
-$db = new mysql('localhost','user','pw','db')
+$db = new mysql(DBHOST,DBUSER,DBPASS,DBNAME);

@@ -32,17 +32,20 @@ echo '<br>';
 // control linkobject pair creation
 $link = ''; //empty link for data pairs
 $link = $http->getLink(array('kasutaja'=>'user','parool'=>'qwerty'));
-echo $link;
+echo $link.'<br>';
 
 //echo '<pre>';
 //print_r($http);
 //echo '</pre>';
 
 require_once 'act.php';
+echo '<br><br>';
 
+$sql = 'SELECT NOW();';
+$res = $db->query($sql);
 
 echo '<pre>';
-print_r($db);
+print_r($res);
 echo '</pre>';
 
 ?>

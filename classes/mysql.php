@@ -22,6 +22,7 @@ class mysql
         $this->user = $u;
         $this->pass = $p;
         $this->dbname = $dn;
+        $this->connect();
     }// construct
     // connect to database server and use database
     function connect(){
@@ -31,4 +32,25 @@ class mysql
             exit;
         }
     }
+    // query to database
+    function query($sql){
+        $res = mysqli_query($this->conn,$sql);
+        if(!$res === FALSE){
+        echo 'Viga päringus <b>'.$sql.'</b></br>';
+        echo mysqli_error($this->conn).'<br>';
+        }
+        return $res;
+    }//query
+    // query data result
+    function getArray($sql){
+        $res = $this->query($sql);
+        $data = array();
+        while($record = mysqli_fetch_assoc($res)){
+            $data[] = $record;
+        }
+        if(count($data) == 0){
+            return false;
+        }
+        return $data;
+    } // get array
 } // class end
