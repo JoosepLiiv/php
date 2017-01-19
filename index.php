@@ -5,10 +5,8 @@
  * Date: 12.01.2017
  * Time: 13:19
  */
-
-
-
-// and use it
+// import configuration file
+require_once 'conf.php';
 // create an template object,
 // load template file content
 $tmpl = new template('main.html');
