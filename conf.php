@@ -14,7 +14,8 @@ define('ACTS_DIR', 'acts/'); // acts
 define('DEFAULT_ACT', 'default'); // default act or location
 
 require_once CLASSES_DIR.'template.php'; // import template class
-require_once CLASSES_DIR.'http.php'; // report http class
-require_once CLASSES_DIR.'linkobject.php'; // report linkobject class
+require_once CLASSES_DIR.'http.php'; // import http class
+require_once CLASSES_DIR.'linkobject.php'; // import linkobject class
+require_once CLASSES_DIR.'mysql.php'; // import mysql class
 
 $http = new linkobject();
