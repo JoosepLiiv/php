@@ -40,4 +40,9 @@ echo $link;
 
 require_once 'act.php';
 
+
+echo '<pre>';
+print_r($db);
+echo '</pre>';
+
 ?>

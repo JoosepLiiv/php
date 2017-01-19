@@ -19,3 +19,5 @@ require_once CLASSES_DIR.'linkobject.php'; // import linkobject class
 require_once CLASSES_DIR.'mysql.php'; // import mysql class
 
 $http = new linkobject();
+// create database connection object
+$db = new mysql('localhost','user','pw','db')
