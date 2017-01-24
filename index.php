@@ -47,9 +47,6 @@ $res = $db->getArray($sql);
 echo '<pre>';
 print_r($res);
 echo '</pre>';
-echo '<pre>';
-print_r($history);
-echo '</pre>';
 
-echo($db->showHistory());
+$db->showHistory();
 ?>
