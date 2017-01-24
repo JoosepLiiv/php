@@ -50,8 +50,8 @@ class mysql
         }
         $time = $this->getMicroTime() - $begin;
         $this->history[] = array(
-            'sql' = $sql;
-            'time' = $time;
+            'sql' => $sql,
+            'time' => $time
         );
         return $res;
     }//query
@@ -67,4 +67,15 @@ class mysql
         }
         return $data;
     } // get array
+
+    // output query history log array
+    function showHistory(){
+        if(count($this->history) > 0){
+            echo '<br>';
+            foreach($this->history as $key=>$val){
+                echo '<li>'.$val['sql'].'<br>';
+                echo $val['time'].'</li><br>';
+            }
+        }
+    }
 } // class end

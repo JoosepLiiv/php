@@ -47,6 +47,9 @@ $res = $db->getArray($sql);
 echo '<pre>';
 print_r($res);
 echo '</pre>';
-$db->getMicroTime();
+echo '<pre>';
+print_r($history);
+echo '</pre>';
 
+echo($db->showHistory());
 ?>
