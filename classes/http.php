@@ -49,5 +49,12 @@ class http
             return $this->vars[$name];
         }
         return false;
+    } // get
+
+    //delete http data element
+    function del($name){
+        if(isset($this->vars[$name])){
+            unset($this->vars[$name]);
+        }
     }
 }
