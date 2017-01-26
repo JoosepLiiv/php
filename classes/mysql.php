@@ -34,27 +34,28 @@ class mysql
         }
     } // connect
 
-    //get query time
-    function getMicroTime(){
-        list($usec, $sec) = explode(' ', microtime());
-        echo ((float)$usec + (float)$sec);
-    }
+    //control query time
+    function getMicrotime(){
+        list($usec, $sec) = explode(" ", microtime());
+        return ((float)$usec + (float)$sec);
+    }// getMicrotime
 
     // query to database
     function query($sql){
-        $begin = $this->getMicroTime();
-        $res = mysqli_query($this->conn,$sql);
-        if(!$res === FALSE){
-        echo 'Viga päringus <b>'.$sql.'</b></br>';
-        echo mysqli_error($this->conn).'<br>';
+        $begin = $this->getMicrotime();
+        $res = mysqli_query($this->conn, $sql); // query result
+        if($res === FALSE){
+            echo 'Viga päringus <b>'.$sql.'</b><br />';
+            echo mysqli_error($this->conn).'<br />';
+            exit;
         }
-        $time = $this->getMicroTime() - $begin;
+        $time = $this->getMicrotime() - $begin;
         $this->history[] = array(
             'sql' => $sql,
             'time' => $time
         );
         return $res;
-    }//query
+    }// query
     // query data result
     function getArray($sql){
         $res = $this->query($sql);
@@ -71,11 +72,11 @@ class mysql
     // output query history log array
     function showHistory(){
         if(count($this->history) > 0){
-            echo '<br>';
-            foreach($this->history as $key=>$val){
-                echo '<li>'.$val['sql'].'<br>';
-                echo $val['time'].'</li><br>';
+            echo '<hr />';
+            foreach ($this->history as $key=>$val){
+                echo '<li>'.$val['sql'].'<br />';
+                echo '<strong>'.round($val['time'], 6).'</strong><br /></li>';
             }
         }
-    }
+    }// showHistory
 } // class end

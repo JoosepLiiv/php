@@ -15,7 +15,9 @@ require_once 'menu.php';
 $tmpl->set('menu',$menu->parse());
 $tmpl->set('nav_bar','minu navigatsioon');
 $tmpl->set('lang_bar','minu keeleriba');
-$tmpl->set('content','minu sisu');
+//$tmpl->set('content','minu sisu');
+//allow to use default act
+$tmpl->set('content',$http->get('content'));
 // control the content of template object
 //echo '<pre>';
 //print_r($tmpl);

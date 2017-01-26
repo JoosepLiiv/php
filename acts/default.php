@@ -5,5 +5,16 @@
  * Date: 18.01.2017
  * Time: 15:14
  */
-echo "default faili sisu";
+$page_id = $http->get('page_id'); //get page id from url
+//get page content from fb according to page_id
+$sql = "SELECT * FROM content where content_id='.$page_id.';";
+// query to db
+$res = $db->getArray($sql);
+// if query has result
+if($res != FALSE){
+    // control result test output
+    $page = $res[0];
+    $http->set('page_id', $page[content_id]);
+    $tmpl->set('content', $page['content']);
+}
 ?>
