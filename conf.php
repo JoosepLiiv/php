@@ -14,6 +14,11 @@ define('ACTS_DIR', 'acts/'); // acts
 define('DEFAULT_ACT', 'default'); // default act or location
 define('LIB_DIR', 'lib/'); // lib directory
 
+// user roles
+define('ROLE_NONE', 0);
+define('ROLE_ADMIN', 1);
+define('ROLE_USER', 2);
+
 require_once LIB_DIR.'utils.php'; //import useful sql function
 
 require_once CLASSES_DIR.'template.php'; // import template class
