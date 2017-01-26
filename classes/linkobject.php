@@ -21,6 +21,8 @@ class linkobject extends http
     var $protocol = 'http://'; //protocol for the URL - http
     var $delim = '&amp;'; // &html tag
     var $eq = '='; // = for element pairs
+    //add if exists
+    var $aie = array('sid'=>'sid');
     // class methods
     // constructor
     // create base url: http://XXX.XXX.XXX.XXX/path_to_file.php
@@ -39,10 +41,22 @@ class linkobject extends http
         $link = $link.fixUrl($name).$this->eq.fixUrl($val);
     }// addToLink
     // merge baseURL and link with data pairs
-    function getLink($add = array()){
+    function getLink($add = array(), $aie = array(), $not = array()){
         $link = ''; //empty link
         foreach ($add as $name => $val){
             $this->addToLink($link, $name, $val);
+        }
+        foreach ($aie as $name){
+            $val = $this->get($name);
+            if($val !== false){
+                $this->addToLink($link,$name,$val);
+            }
+        }
+        foreach ($this->aie as $name){
+            $val = $this->get($name);
+            if($val !== false and !in_array($name,$not)){
+                $this->addToLink($link,$name,$val);
+            }
         }
         // control, link is not empty, pairs are created
         if($link != ''){
