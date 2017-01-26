@@ -12,6 +12,9 @@ define('TMPL_DIR', 'tmpl/');
 define('STYLE_DIR','css/');
 define('ACTS_DIR', 'acts/'); // acts
 define('DEFAULT_ACT', 'default'); // default act or location
+define('LIB_DIR', 'lib/'); // lib directory
+
+require_once LIB_DIR.'utils.php'; //import useful sql function
 
 require_once CLASSES_DIR.'template.php'; // import template class
 require_once CLASSES_DIR.'http.php'; // import http class
