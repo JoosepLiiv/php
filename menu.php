@@ -34,28 +34,5 @@ $tmpl->set('menu',$menu->parse());
 $item->set('name', 'Esimene leht');
 $link = $http->getLink(array('act'=>'first'));
 $item->set('link', $link);
-// control created item output
-/*echo '<pre>';
-print_r($item);
-echo '</pre>';*/
-// add menu item to menu
-//$menu->set('items', $item->parse());
-// menu item creation - end
-// Menu item creation - begin
-// add pairs of item temlate element names and real values
-$item->set('name', 'Teine leht');
-$link = $http->getLink(array('act'=>'second'));
-$item->set('link', $link);
-// control created item output
-/*echo '<pre>';
-print_r($item);
-echo '</pre>';*/
-// add menu item to menu
-//$menu->add('items', $item->parse()); // add another item to menu
-// Menu item creation - end
-// control created menu output
-echo '<pre>';
-print_r($menu);
-echo '</pre>';
 // output menu
 echo $menu->parse();

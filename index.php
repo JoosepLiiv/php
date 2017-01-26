@@ -51,4 +51,9 @@ print_r($res);
 echo '</pre>';
 
 $db->showHistory();
+
+//control session output
+echo '<pre>';
+print_r($sess);
+echo '</pre>';
 ?>
