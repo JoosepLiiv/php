@@ -11,7 +11,7 @@ $password = $http->get('password');
 $sql = 'SELECT * FROM user WHERE '.
     'username='.fixDb($username).' AND '.
     'password='.fixDb(md5($password)).' AND '.
-    'is_activated=1';
+    'is_active=1';
 $res = $db->getArray($sql);
 
 if($res === false)
@@ -24,4 +24,5 @@ if($res === false)
 else
 {
     $sess->createSession($res[0]);
+    $http->redirect();
 }
