@@ -27,7 +27,17 @@ class session
     }
     // constructor
 
-    //create session
+    // set anonymous
+    function setAnonymous($hool){
+        $this->anonymous = $hool;
+    } //setAnonymous
+
+    // set timeout
+    function setTimeout($t){
+        $this->timeout = $t;
+    } //setTimeout
+
+    // create session
     function createSession($user = false){
         // anonymous session
         if($user == false){
@@ -108,4 +118,31 @@ class session
             $this->http->del('sid');
         }
     } // deleteSession
+
+
+    function set($name, $val){
+        $this->vars[$name] = $val;
+    }//set
+    //
+    function get($name,$fix = true){
+        if(isset($this->vars[$name])){
+            return $this->vars[$name];
+        }
+        return false;
+    } // get
+
+    //delete http data element
+    function del($name){
+        if(isset($this->vars[$name])){
+            unset($this->vars[$name]);
+        }
+    } //del
+    function flush(){
+        if($this->sid !== false){
+            $sql = 'UPDATE session SET changed=NOW(), '.
+                'svars='.fixDb(serialize($this->vars)).
+                ' where sid='.fixDb($this->sid);
+            $this->db->query($sql);
+        }
+    } // flush
 } // class end

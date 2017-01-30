@@ -18,6 +18,8 @@ $tmpl->set('lang_bar','minu keeleriba');
 //$tmpl->set('content','minu sisu');
 //allow to use default act
 $tmpl->set('content',$http->get('content'));
+// use session data
+$tmpl->set('nav_bar', $sess->user_data['username']);
 // control the content of template object
 //echo '<pre>';
 //print_r($tmpl);
@@ -49,6 +51,9 @@ $res = $db->getArray($sql);
 echo '<pre>';
 print_r($res);
 echo '</pre>';
+
+// continues session
+$sess->flush();
 
 $db->showHistory();
 
