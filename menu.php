@@ -27,7 +27,7 @@ if($res != false){
         //add content to menu item
         $link = $http->getLink(array('page_id'=>$page['content_id']));
         $item->set('link',$link);
-        $item->set('name',$page['title']);
+        $item->set('name',tr($page['title']));
         //add item to menu
         $menu->add('items', $item->parse());
     }
@@ -37,7 +37,7 @@ if($res != false){
 if(USER_ID != ROLE_NONE){
   $link = $http->getLink(array('act' => 'logout'));
   $item->set('link', $link);
-  $item->set('name', 'Log out');
+  $item->set('name', tr('Logi välja'));
   $menu->add('items', $item->parse());
 }
 

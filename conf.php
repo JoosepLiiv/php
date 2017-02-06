@@ -13,6 +13,7 @@ define('STYLE_DIR','css/');
 define('ACTS_DIR', 'acts/'); // acts
 define('DEFAULT_ACT', 'default'); // default act or location
 define('LIB_DIR', 'lib/'); // lib directory
+define('LANG_DIR', 'lang/'); // lang path
 
 // user roles
 define('ROLE_NONE', 0);
@@ -52,3 +53,5 @@ if(!isset($siteLangs[$lang_id])) {
     $http->set('lang_id', $lang_id); // fix used lang_id
 }
 define('LANG_ID', $lang_id); // define useful constant which describe right now active lang
+
+require_once LIB_DIR.'trans.php';
