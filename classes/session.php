@@ -23,7 +23,7 @@ class session
         $this->http = &$http;
         $this->db = &$db;
         $this->sid = $http->get('sid');
-        $this->createSession();
+        $this->checkSession();
     }
     // constructor
 
@@ -77,7 +77,7 @@ class session
         }
         if($this->sid !== false){
             // get data about this session
-            $sql = 'SELECT * FROM session WHERE'.
+            $sql = 'SELECT * FROM session WHERE '.
                 'sid='.fixDb($this->sid);
             $res = $this->db->getArray($sql);
             if($res == false){

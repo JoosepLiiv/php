@@ -17,8 +17,6 @@ $tmpl->set('header', 'minu lehe pealkiri');
 // create and output menu
 // import menu file
 require_once 'menu.php'; // in this file is menu creation
-// import act file
-require_once 'act.php';
 $tmpl->set('menu', $menu->parse());
 //$tmpl->set('nav_bar', 'minu navigatsioon');
 $tmpl->set('lang_bar', 'minu keeleriba');
@@ -26,6 +24,8 @@ $tmpl->set('lang_bar', 'minu keeleriba');
 //$tmpl->set('content', $http->get('content'));
 // output template content set up with real values
 
+// import act file
+require_once 'act.php';
 //using session data
 $tmpl->set('nav_bar', $sess->user_data['username']);
 
