@@ -19,6 +19,8 @@ define('ROLE_NONE', 0);
 define('ROLE_ADMIN', 1);
 define('ROLE_USER', 2);
 
+define('DEFAULT_LANG', 'et'); //default language
+
 require_once LIB_DIR.'utils.php'; //import useful sql function
 
 require_once CLASSES_DIR.'template.php'; // import template class
