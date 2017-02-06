@@ -36,3 +36,19 @@ $http = new linkobject();
 $db = new mysql(DBHOST,DBUSER,DBPASS,DBNAME);
 // create session object
 $sess = new session($http,$db);
+
+// language support
+// sites used langs
+$siteLangs = array(
+    'et' => 'estonian',
+    'en' => 'english',
+    'ru' => 'russian'
+);
+// get lang_id from url
+$lang_id = $http->get('lang_id');
+if(!isset($siteLangs[$lang_id])) {
+    // if langugage is not supported
+    $lang_id = DEFAULT_LANG; // use default
+    $http->set('lang_id', $lang_id); // fix used lang_id
+}
+define('LANG_ID', $lang_id); // define useful constant which describe right now active lang

@@ -11,6 +11,10 @@ require_once 'conf.php';
 // set up the file name for template
 // load template file content
 $tmpl = new template('main');
+
+// require langugage control
+require_once('lang.php');
+
 // add pairs of temlate element names and real values
 $tmpl->set('style', STYLE_DIR.'main'.'.css');
 $tmpl->set('header', 'minu lehe pealkiri');
@@ -18,8 +22,7 @@ $tmpl->set('header', 'minu lehe pealkiri');
 // import menu file
 require_once 'menu.php'; // in this file is menu creation
 $tmpl->set('menu', $menu->parse());
-//$tmpl->set('nav_bar', 'minu navigatsioon');
-$tmpl->set('lang_bar', 'minu keeleriba');
+//$tmpl->set('nav_bar', $sess->user_data['username']);
 // allow to use default act
 //$tmpl->set('content', $http->get('content'));
 // output template content set up with real values
@@ -28,6 +31,8 @@ $tmpl->set('lang_bar', 'minu keeleriba');
 require_once 'act.php';
 //using session data
 $tmpl->set('nav_bar', $sess->user_data['username']);
+
+//$tmpl->set('lang_bar', LANG_ID);
 
 echo $tmpl->parse();
 
